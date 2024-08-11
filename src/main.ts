@@ -1,16 +1,6 @@
 import { fromZodError } from "zod-validation-error";
 
-import { z } from "zod";
-interface LoginForm {
-  email: string;
-  password: string;
-}
-const LoginFormSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters long"),
-});
-
-
+import { LoginForm, LoginFormSchema } from "./login.model";
 
 const formData: LoginForm = {
   email: "shoaib@gmail.com",
